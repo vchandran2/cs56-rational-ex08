@@ -104,6 +104,7 @@ public class Rational {
     public static Rational difference(Rational a, Rational b) {
 	return a.minus(b);
     }
+
     
     /** 
 	For testing getters.  
