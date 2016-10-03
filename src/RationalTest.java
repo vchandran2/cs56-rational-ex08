@@ -159,6 +159,72 @@ public class RationalTest {
 	Rational r = Rational.product(r_m3_1,r_1_m3);
 	assertEquals("1",r.toString());
     }
- 
+
+    //I added after this point
+    @Test
+    public void test_reciprocalOf_r_5_15() {
+	Rational r = r_5_15.reciprocalOf();
+	assertEquals("3",r.toString());
+    }
+
+    @Test
+    public void test_reciprocalOf_r_3_7() {
+	Rational r = r_3_7.reciprocalOf();
+	assertEquals("7/3",r.toString());
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void test_num_zero() {
+	Rational r = r_0_1.reciprocalOf();
+    }
+
+    @Test
+    public void test_r_3_7_divide_by_r_13_4() {
+	Rational r = r_3_7.dividedBy(r_13_4);
+	assertEquals("12/91",r.toString());
+    }
+
+    @Test
+    public void test_quotient_of_r_3_7_and_r_13_4() {
+	Rational r = Rational.quotient(r_3_7,r_13_4);
+	assertEquals("12/91",r.toString());
+    }
+
+    @Test
+    public void test_lcm_of_4_and_13() {
+	int lcm = Rational.lcm(4,13);
+	assertEquals(52,lcm);
+    }
+
+    @Test
+    public void test_lcm_of_0_and_10() {
+	int lcm = Rational.lcm(0,10);
+	assertEquals(0,lcm);
+    }
+
+    @Test
+    public void test_r_3_7_plus_r_13_4() {
+	Rational r = r_3_7.plus(r_13_4);
+	assertEquals("103/28",r.toString());
+    }
+    
+
+    @Test
+    public void test_sum_of_r_3_7_plus_r_13_4() {
+	Rational r = Rational.sum(r_3_7,r_13_4);
+	assertEquals("103/28",r.toString());
+    }
+
+    @Test
+    public void test_r_3_7_minus_r_13_4() {
+	Rational r = r_3_7.minus(r_13_4);
+	assertEquals("79/-28",r.toString());
+    }
+
+    @Test
+    public void test_difference_r_3_7_and_r_13_4() {
+	Rational r = Rational.difference(r_3_7,r_13_4);
+	assertEquals("79/-28",r.toString());
+    }
     
 }
